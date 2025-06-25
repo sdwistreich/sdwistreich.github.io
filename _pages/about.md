@@ -12,7 +12,7 @@ I am a second year Masters student in Computer Science at [Stanford University](
 I graduated from Stanford University with a Bachelors in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor Jiajun Wu and Professor [Hyo Gweon](https://psychology.stanford.edu/people/hyowon-gweon), working on robotics and human cognition.
 
 ## News
-- **[June 2025]** *X-Capture: An Open-Source Portable Device for Multi-Sensory Learning*, was accepted to ICCV 2025!
+- **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://arxiv.org/pdf/2504.02318)*, was accepted to ICCV 2025!
 - **[June 2025]** Completed BSCS degree at Stanford University.
 
 ## Publications
