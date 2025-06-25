@@ -17,7 +17,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 ## Publications
 
-<video width="320" height="180" controls poster="/images/video-thumb.jpg">
+<video width="320" height="180" controls poster="/images/video-thumb.jpg" autoplay muted loop>
   <source src="/images/CroppedTurntable2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
