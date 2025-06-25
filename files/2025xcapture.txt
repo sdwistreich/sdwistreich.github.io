@@ -1,0 +1,6 @@
+@inproceedings{clarke2025xcapture,
+    title={X-Capture: An Open-Source Portable Device for Multi-Sensory Learning},
+    author={Samuel Clarke and Suzannah Wistreich and Yanjie Ze and Jiajun Wu},
+    booktitle={arXiv},
+    year={2025}
+}
