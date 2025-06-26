@@ -24,8 +24,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 ### [**X-Capture: An Open-Source Portable Device for Multi-Sensory Learning**](https://arxiv.org/pdf/2504.02318)
 
-Samuel Clarke, <b>Suzannah Wistreich</b>, Yanjie Ze, Jiajun Wu
-
+Samuel Clarke, <b>Suzannah Wistreich</b>, Yanjie Ze, Jiajun Wu<br>
 *International Conference on Computer Vision ([ICCV](https://iccv.thecvf.com)), 2025*
 
 [project page](https://xcapture.github.io) &nbsp;/&nbsp; [arXiv](https://arxiv.org/pdf/2504.02318) &nbsp;/&nbsp; [bibtex](/files/2025xcapture.txt) &nbsp;
