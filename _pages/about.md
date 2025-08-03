@@ -64,14 +64,14 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <div class="card">
   <div class="thumb">
-    <img src="/images/DexSkin.gif" alt="DexSkin GIF" draggable="false" loading="eager">
+    <img src="/images/DexSkin.gif" width="240" height="135" alt="DexSkin GIF" draggable="false" loading="eager">
   </div>
   <div class="info">
     <h3 class="title">
       <a href="https://dex-skin.github.io"><strong>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</strong></a>
     </h3>
     <p class="authors">
-      <strong>Suzannah Wistreich</strong><sup>*</sup>, <strong>Baiyu Shi</strong><sup>*</sup>, <strong>Stephen Tian</strong><sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
+      <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
     </p>
     <p class="venue">
       Conference on Robot Learning (<a href="https://www.corl.org/home">CoRL</a>), 2025
@@ -85,7 +85,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <div class="card">
   <div class="thumb">
-    <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager">
+    <img src="/images/CroppedTurntable.gif" width="240" height="135" alt="X-Capture GIF" draggable="false" loading="eager">
   </div>
   <div class="info">
     <h3 class="title">
