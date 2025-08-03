@@ -19,22 +19,20 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 ## Publications
 
 <video width="320" height="180" controls poster="/images/video-thumb.jpg" autoplay muted loop>
-  <source src="/images/CroppedTurntable2.mp4" type="video/mp4">
+  <source src="/images/CroppedTurntable.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 ### [**DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation**](https://dex-skin.github.io)
 
 <b>Suzannah Wistreich<sup>*</sup></b>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu<br>
-
 *Conference on Robot Learning ([CoRL](https://www.corl.org/home)), 2025*
 
 [project page](https://dex-skin.github.io) &nbsp;/&nbsp; arXiv (coming soon) &nbsp;
 
-<video width="320" height="180" controls poster="/images/video-thumb.jpg" autoplay muted loop>
-  <source src="/images/CroppedTurntable2.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+
+<img src="/images/CroppedTurntable2.gif" width="320" height="180" alt="Turntable GIF">
 
 ### [**X-Capture: An Open-Source Portable Device for Multi-Sensory Learning**](https://arxiv.org/pdf/2504.02318)
 
