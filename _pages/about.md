@@ -26,7 +26,6 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 ### [**DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation**](https://dex-skin.github.io)
 
 <b>Suzannah Wistreich<sup>*</sup></b>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu<br>
-
 *Conference on Robot Learning ([CoRL](https://www.corl.org/home)), 2025*
 
 [project page](https://dex-skin.github.io) &nbsp;/&nbsp; arXiv (coming soon) &nbsp;
