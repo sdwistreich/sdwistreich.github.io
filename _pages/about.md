@@ -23,12 +23,12 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
   Your browser does not support the video tag.
 </video>
 
-### [**X-Capture: An Open-Source Portable Device for Multi-Sensory Learning**](https://arxiv.org/pdf/2504.02318)
+### [**DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation**](https://dex-skin.github.io)
 
-Samuel Clarke, <b>Suzannah Wistreich</b>, Yanjie Ze, Jiajun Wu<br>
-*International Conference on Computer Vision ([ICCV](https://iccv.thecvf.com)), 2025*
+<b>Suzannah Wistreich text<sup>*</sup></b>, Baiyu Shi text<sup>*</sup>, Stephen Tian text<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu<br>
+*Conference on Robot Learning ([CoRL](https://www.corl.org/home)), 2025*
 
-[project page](https://xcapture.github.io) &nbsp;/&nbsp; [arXiv](https://arxiv.org/pdf/2504.02318) &nbsp;/&nbsp; [bibtex](/files/2025xcapture.txt) &nbsp;
+[project page](https://dex-skin.github.io) &nbsp;/&nbsp; arXiv (coming soon) &nbsp;
 
 <video width="320" height="180" controls poster="/images/video-thumb.jpg" autoplay muted loop>
   <source src="/images/CroppedTurntable2.mp4" type="video/mp4">
