@@ -6,10 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-.bio-large {
-  font-size: 1.1rem; /* ~10% larger than base */
-  line-height: 1.4;
-}
+
 <p class="bio-large">
   I am a second year Masters student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
 </p>
