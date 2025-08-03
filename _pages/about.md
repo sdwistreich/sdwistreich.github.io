@@ -55,8 +55,14 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
   font-size: 0.9em;
 }
 .card .links a {
-  color: inherit;
+  color: var(--global-link-color) !important;
   text-decoration: none;
+}
+.card .links a:hover {
+  color: var(--global-link-color-hover) !important;
+}
+.card .links a:visited {
+  color: var(--global-link-color-visited) !important;
 }
 .card .links .sep {
   margin: 0 0.35rem;
