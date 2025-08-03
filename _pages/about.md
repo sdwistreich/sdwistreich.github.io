@@ -18,10 +18,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 ## Publications
 
-<video width="320" height="180" controls poster="/images/video-thumb.jpg" autoplay muted loop>
-  <source src="/images/CroppedTurntable.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img src="/images/DexSkin.gif" width="240" height="135" alt="Turntable GIF" draggable="false" style="pointer-events:none;" loading="eager">
 
 ### [**DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation**](https://dex-skin.github.io)
 
