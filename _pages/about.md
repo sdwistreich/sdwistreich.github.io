@@ -86,7 +86,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <div class="card">
   <div class="thumb">
-    <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager" width="240" height="135">
+    <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager" width="240">
   </div>
   <div class="info">
     <h3 class="title">
