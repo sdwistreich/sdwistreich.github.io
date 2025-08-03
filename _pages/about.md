@@ -21,17 +21,17 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 .card {
   display: block;
   max-width: 800px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   gap: 0.5rem;
 }
 .card .thumb {
-  width: 240px; /* fixed container size so gif stays that size */
+  width: 240px;
   margin-bottom: 0.5rem;
 }
 .card .thumb img {
   display: block;
   width: 240px;
-  height: 135px;
+  height: auto;
   object-fit: cover;
   pointer-events: none;
   user-select: none;
