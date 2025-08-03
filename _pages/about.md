@@ -27,7 +27,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <p style="margin:0; line-height:1.1;">
   <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu<br>
-  <span style="font-style:italic; font-size:0.9em; display:block; margin:0;">
+  <span style="font-style:italic; font-size:1em; display:block; margin:0;">
     Conference on Robot Learning (<a href="https://www.corl.org/home">CoRL</a>), 2025
   </span>
 </p>
@@ -41,8 +41,8 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <p style="margin:0; line-height:1.1;">
   Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu<br>
-  <span style="font-style:italic; font-size:0.9em; display:block; margin:0;">
-    *International Conference on Computer Vision (<a href="https://iccv.thecvf.com" target="_blank" rel="noopener">ICCV</a>), 2025*
+  <span style="font-style:italic; font-size:1em; display:block; margin:0;">
+    International Conference on Computer Vision (<a href="https://iccv.thecvf.com" target="_blank" rel="noopener">ICCV</a>), 2025
   </span>
 </p>
 [project page](https://xcapture.github.io) &nbsp;/&nbsp; [arXiv](https://arxiv.org/pdf/2504.02318) &nbsp;/&nbsp; [bibtex](/files/2025xcapture.txt) &nbsp;
