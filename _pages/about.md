@@ -25,13 +25,14 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
   gap: 0.5rem;
 }
 .card .thumb {
-  width: 100%;
+  width: 240px; /* fixed container size so gif stays that size */
   margin-bottom: 0.5rem;
 }
 .card .thumb img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 240px;
+  height: 135px;
+  object-fit: cover;
   pointer-events: none;
   user-select: none;
 }
@@ -64,7 +65,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <div class="card">
   <div class="thumb">
-    <img src="/images/DexSkin.gif" width="240" height="135" alt="DexSkin GIF" draggable="false" loading="eager">
+    <img src="/images/DexSkin.gif" alt="DexSkin GIF" draggable="false" loading="eager" width="240" height="135">
   </div>
   <div class="info">
     <h3 class="title">
@@ -85,7 +86,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 <div class="card">
   <div class="thumb">
-    <img src="/images/CroppedTurntable.gif" width="240" height="135" alt="X-Capture GIF" draggable="false" loading="eager">
+    <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager" width="240" height="135">
   </div>
   <div class="info">
     <h3 class="title">
