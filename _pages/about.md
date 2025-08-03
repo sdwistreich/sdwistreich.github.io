@@ -35,7 +35,7 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 
 
 
-<img src="/images/CroppedTurntable.gif" width="320" height="180" alt="Turntable GIF" draggable="false" style="pointer-events:none;" loading="eager">
+<img src="/images/CroppedTurntable.gif" width="240" height="135" alt="Turntable GIF" draggable="false" style="pointer-events:none;" loading="eager">
 
 ### [**X-Capture: An Open-Source Portable Device for Multi-Sensory Learning**](https://arxiv.org/pdf/2504.02318)
 
