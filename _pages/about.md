@@ -17,29 +17,93 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 - **[June 2025]** Completed BSCS degree at Stanford University.
 
 ## Publications
+<style>
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+.card .thumb {
+  flex: 0 0 240px;
+}
+.card .thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+.card .info {
+  flex: 1 1 0;
+  min-width: 200px;
+}
+.card .title {
+  margin: 0 0 0.25rem;
+}
+.card .authors {
+  margin: 0;
+  line-height: 1.1;
+}
+.card .venue {
+  font-style: italic;
+  font-size: 0.9em;
+  margin: 0.25rem 0 0;
+}
+.card .links {
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+}
+.card .links a {
+  color: inherit;
+  text-decoration: none;
+}
+.card .links .sep {
+  margin: 0 0.35rem;
+}
+</style>
 
-<img src="/images/DexSkin.gif" width="240" height="135" alt="Turntable GIF" draggable="false" style="pointer-events:none;" loading="eager">
+<div class="card">
+  <div class="thumb">
+    <img src="/images/DexSkin.gif" alt="DexSkin GIF" draggable="false" loading="eager">
+  </div>
+  <div class="info">
+    <h3 class="title">
+      <a href="https://dex-skin.github.io"><strong>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</strong></a>
+    </h3>
+    <p class="authors">
+      <strong>Suzannah Wistreich</strong><sup>*</sup>, <strong>Baiyu Shi</strong><sup>*</sup>, <strong>Stephen Tian</strong><sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
+    </p>
+    <p class="venue">
+      Conference on Robot Learning (<a href="https://www.corl.org/home">CoRL</a>), 2025
+    </p>
+    <div class="links">
+      <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
+      arXiv (coming soon)
+    </div>
+  </div>
+</div>
 
-### [**DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation**](https://dex-skin.github.io)
-
-<p style="margin:0; line-height:1.1;">
-  <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu<br>
-  <span style="font-style:italic; font-size:1em; display:block; margin:0;">
-    Conference on Robot Learning (<a href="https://www.corl.org/home">CoRL</a>), 2025
-  </span>
-</p>
-[project page](https://dex-skin.github.io) &nbsp;/&nbsp; arXiv (coming soon) &nbsp;
-
-
-
-<img src="/images/CroppedTurntable.gif" width="240" height="135" alt="Turntable GIF" draggable="false" style="pointer-events:none;" loading="eager">
-
-### [**X-Capture: An Open-Source Portable Device for Multi-Sensory Learning**](https://arxiv.org/pdf/2504.02318)
-
-<p style="margin:0; line-height:1.1;">
-  Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu<br>
-  <span style="font-style:italic; font-size:1em; display:block; margin:0;">
-    International Conference on Computer Vision (<a href="https://iccv.thecvf.com" target="_blank" rel="noopener">ICCV</a>), 2025
-  </span>
-</p>
-[project page](https://xcapture.github.io) &nbsp;/&nbsp; [arXiv](https://arxiv.org/pdf/2504.02318) &nbsp;/&nbsp; [bibtex](/files/2025xcapture.txt) &nbsp;
+<div class="card">
+  <div class="thumb">
+    <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager">
+  </div>
+  <div class="info">
+    <h3 class="title">
+      <a href="https://arxiv.org/pdf/2504.02318"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
+    </h3>
+    <p class="authors">
+      Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu
+    </p>
+    <p class="venue">
+      International Conference on Computer Vision (<a href="https://iccv.thecvf.com" target="_blank" rel="noopener">ICCV</a>), 2025
+    </p>
+    <div class="links">
+      <a href="https://xcapture.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="https://arxiv.org/pdf/2504.02318">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="/files/2025xcapture.txt">bibtex</a>
+    </div>
+  </div>
+</div>
