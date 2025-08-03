@@ -6,10 +6,16 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
-I am a second year Masters student in Computer Science at [Stanford University](https://www.cs.stanford.edu) where I research multisensory learning, robotics, and computer vision advised by Professor [Jiajun Wu](https://jiajunwu.com/).
-
-I graduated from Stanford University with a Bachelors in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor [Jiajun Wu](https://jiajunwu.com/) and Professor [Hyo Gweon](https://psychology.stanford.edu/people/hyowon-gweon), working on robotics and human cognition.
+.bio-large {
+  font-size: 1.1rem; /* ~10% larger than base */
+  line-height: 1.4;
+}
+<p class="bio-large">
+  I am a second year Masters student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
+</p>
+<p class="bio-large">
+  I graduated from Stanford University with a Bachelors in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
+</p>
 
 ## News
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
