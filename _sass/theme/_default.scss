@@ -46,10 +46,10 @@ $sidebar-screen-min-width   : 1024px;
   --global-thead-color              : #{$lighter-gray};
 }
 
-/* force all actual <a> elements to be that color, overriding other rules if needed */
-a,
-a:visited,
-a:hover,
-a:active {
-  color: #3a4163 !important;
-}
+// /* force all actual <a> elements to be that color, overriding other rules if needed */
+// a,
+// a:visited,
+// a:hover,
+// a:active {
+//   color: #3a4163 !important;
+// }
