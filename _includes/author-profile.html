@@ -8,9 +8,24 @@
 
   <div class="author__avatar">
     {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
+      <img 
+        src="{{ author.avatar }}" 
+        alt="{{ author.name }}"
+        width="150" height="150"
+        style="border-radius:50%; object-fit:cover; image-rendering:auto;"
+      >
     {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+      {% assign parts = author.avatar | split: '.' %}
+      {% assign ext = parts | last %}
+      {% assign base = parts[0] %}
+      {% assign avatar_2x = base | append: '@2x.' | append: ext %}
+      <img 
+        src="{{ base_path }}/images/{{ author.avatar }}" 
+        srcset="{{ base_path }}/images/{{ author.avatar }} 1x, {{ base_path }}/images/{{ avatar_2x }} 2x" 
+        alt="{{ author.name }}"
+        width="150" height="150"
+        style="border-radius:50%; object-fit:cover; image-rendering:auto;"
+      >
     {% endif %}
   </div>
 
