@@ -19,15 +19,14 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
 ## Publications
 <style>
 .card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: flex-start;
+  display: block;
   max-width: 800px;
   margin-bottom: 1.5rem;
+  gap: 0.5rem;
 }
 .card .thumb {
-  flex: 0 0 240px;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 .card .thumb img {
   display: block;
@@ -37,15 +36,13 @@ I graduated from Stanford University with a Bachelors in Computer Science (2025)
   user-select: none;
 }
 .card .info {
-  flex: 1 1 0;
-  min-width: 200px;
+  line-height: 1.1;
 }
 .card .title {
   margin: 0 0 0.25rem;
 }
 .card .authors {
   margin: 0;
-  line-height: 1.1;
 }
 .card .venue {
   font-style: italic;
