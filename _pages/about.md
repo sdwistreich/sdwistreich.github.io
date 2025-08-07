@@ -11,7 +11,7 @@ redirect_from:
   I am a second-year Master's student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
 </p>
 <p class="bio-large">
-  I graduated from Stanford University with a Bachelors in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
+  I graduated from Stanford University with a Bachelor of Science in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
 
 ## News
