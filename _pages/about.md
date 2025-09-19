@@ -84,7 +84,10 @@ redirect_from:
       <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
     </p>
     <p class="venue">
-      <i>Conference on Robot Learning</i> (<a href="https://www.corl.org/home">CoRL</a>), 2025 (<span style="color:red;">Oral</span>)
+      <i>Conference on Robot Learning</i> (<a href="https://www.corl.org/home">CoRL</a>), 2025 (<span style="color:red;">Oral</span>)<br>
+      <i><a href="https://dex-manipulation.github.io/corl2025/" style="text-decoration:none; color:inherit;">
+          CoRL Workshop on <b>Dexterous Manipulation</b>, 2025
+        </a></i>
     </p>
     <div class="links">
       <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
