@@ -15,6 +15,7 @@ redirect_from:
 </p>
 
 ## News
+- **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026.
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
 - **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://arxiv.org/pdf/2504.02318)*, is accepted to ICCV 2025!
 - **[June 2025]** Completed BSCS degree at Stanford University.
@@ -84,10 +85,7 @@ redirect_from:
       <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
     </p>
     <p class="venue">
-      <i>Conference on Robot Learning</i> (<a href="https://www.corl.org/home">CoRL</a>), 2025 (<span style="color:red;">Oral</span>)<br>
-      <i><a href="https://dex-manipulation.github.io/corl2025/" style="text-decoration:none; color:inherit;">
-          CoRL Workshop on <b>Dexterous Manipulation</b>, 2025
-        </a></i>
+      <i>Conference on Robot Learning</i> (<a href="https://www.corl.org/home">CoRL</a>), 2025 (<span style="color:red;">Oral</span>)
     </p>
     <div class="links">
       <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
