@@ -15,7 +15,7 @@ redirect_from:
 </p>
 
 ## News
-- **[September 2025]** Selected as a [Siebel Scholar, Class of 2026](https://www.siebelscholars.com), Stanford School of Engineering.
+- **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026, Stanford School of Engineering.
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
 - **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://arxiv.org/pdf/2504.02318)*, is accepted to ICCV 2025!
 - **[June 2025]** Completed BSCS degree at Stanford University.
