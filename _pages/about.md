@@ -17,7 +17,7 @@ redirect_from:
 ## News
 - **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026, Stanford School of Engineering.
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
-- **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://arxiv.org/pdf/2504.02318)*, is accepted to ICCV 2025!
+- **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://xcapture.github.io)*, is accepted to ICCV 2025!
 - **[June 2025]** Completed BSCS degree at Stanford University.
 
 ## Publications
@@ -89,7 +89,8 @@ redirect_from:
     </p>
     <div class="links">
       <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
-      arXiv (coming soon)
+      <a href="https://arxiv.org/2509.18830">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="/files/2025dexskin.txt">bibtex</a>
     </div>
   </div>
 </div>
@@ -100,7 +101,7 @@ redirect_from:
   </div>
   <div class="info">
     <h3 class="title">
-      <a href="https://arxiv.org/pdf/2504.02318"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
+      <a href="https://arxiv.org/2504.02318"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
     </h3>
     <p class="authors">
       Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu
