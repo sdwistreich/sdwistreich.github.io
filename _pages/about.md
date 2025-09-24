@@ -101,7 +101,7 @@ redirect_from:
   </div>
   <div class="info">
     <h3 class="title">
-      <a href="https://arxiv.org/abs/2509.18830"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
+      <a href="https://arxiv.org/abs/2504.02318"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
     </h3>
     <p class="authors">
       Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu
