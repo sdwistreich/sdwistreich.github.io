@@ -101,7 +101,7 @@ redirect_from:
   </div>
   <div class="info">
     <h3 class="title">
-      <a href="https://arxiv.org/2504.02318"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
+      <a href="https://arxiv.org/abs/2509.18830"><strong>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</strong></a>
     </h3>
     <p class="authors">
       Samuel Clarke, <strong>Suzannah Wistreich</strong>, Yanjie Ze, Jiajun Wu
@@ -111,7 +111,7 @@ redirect_from:
     </p>
     <div class="links">
       <a href="https://xcapture.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
-      <a href="https://arxiv.org/pdf/2504.02318">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="https://arxiv.org/abs/2504.02318">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
       <a href="/files/2025xcapture.txt">bibtex</a>
     </div>
   </div>
