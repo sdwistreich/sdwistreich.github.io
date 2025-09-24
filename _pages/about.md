@@ -79,7 +79,7 @@ redirect_from:
   </div>
   <div class="info">
     <h3 class="title">
-      <a href="https://dex-skin.github.io"><strong>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</strong></a>
+      <a href="https://arxiv.org/abs/2509.18830"><strong>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</strong></a>
     </h3>
     <p class="authors">
       <strong>Suzannah Wistreich</strong><sup>*</sup>, Baiyu Shi<sup>*</sup>, Stephen Tian<sup>*</sup>, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu
@@ -89,7 +89,7 @@ redirect_from:
     </p>
     <div class="links">
       <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
-      <a href="https://arxiv.org/2509.18830">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="https://arxiv.org/abs/2509.18830">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
       <a href="/files/2025dexskin.txt">bibtex</a>
     </div>
   </div>
