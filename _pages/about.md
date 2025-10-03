@@ -91,7 +91,7 @@ redirect_from:
       <a href="https://dex-skin.github.io">project page</a><span class="sep">&nbsp;/&nbsp;</span>
       <a href="https://arxiv.org/abs/2509.18830">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
       <a href="/files/2025dexskin.txt">bibtex</a><span class="sep">&nbsp;/&nbsp;</span>
-      <a href="https://youtu.be/9lzFVQoc4Do?t=22642">conference presentation</a>
+      <a href="https://youtu.be/9lzFVQoc4Do?t=22642">presentation</a>
     </div>
   </div>
 </div>
