@@ -8,13 +8,14 @@ redirect_from:
 ---
 
 <p class="bio-large">
-  I am a coterm Master's student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
+  I am a coterm Master's student and incoming PhD in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
 </p>
 <p class="bio-large">
   I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
 
 ## News
+- **[February 2026]** Accepted to CS PhD program at Stanford University.
 - **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026, Stanford School of Engineering.
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
 - **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://xcapture.github.io)*, is accepted to ICCV 2025!
