@@ -42,10 +42,7 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-.author__avatar img{
-  width: min(260px, 100%);
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+.author__avatar img {
+  max-width: 260px;
   border-radius: 50%;
 }
