@@ -42,23 +42,33 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-/* make sizing include padding so 100% actually fits */
-.sidebar,
-.sidebar * {
-  box-sizing: border-box;
+.sidebar {
+  position: relative;
+  z-index: 10;
 }
 
-/* hard-stop any overflow from the avatar block */
 .author__avatar {
+  position: relative;
+  z-index: 10;
   max-width: 100%;
   overflow: hidden;
 }
 
-/* never exceed the sidebar's inner width (account for padding via border-box above) */
 .author__avatar img {
   display: block;
   width: 100%;
   max-width: 260px;
   height: auto;
   border-radius: 50%;
+  /* Prevent the image from visually escaping its container */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure page content sits in its own stacking context */
+.page__content,
+.page .e-content,
+#main {
+  position: relative;
+  z-index: 5;
 }
