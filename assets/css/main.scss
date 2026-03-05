@@ -42,9 +42,14 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
+.author__avatar {
+  width: 100%;
+  max-width: 260px;
+}
+
 .author__avatar img {
-  width: min(260px, 100%);
+  width: 100%;
   height: auto;
   border-radius: 50%;
-  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
 }
