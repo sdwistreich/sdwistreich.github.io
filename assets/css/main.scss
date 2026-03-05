@@ -52,8 +52,9 @@
 }
 
 .author__avatar img {
-  width: min(260px, calc(100% - 2rem));
+  width: 260px;
+  max-width: calc(100vw - 3rem);
   height: auto;
   border-radius: 50%;
-  object-fit: cover;
+  image-rendering: smooth;
 }
