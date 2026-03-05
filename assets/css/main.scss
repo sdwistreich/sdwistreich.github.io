@@ -42,14 +42,24 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-.author__avatar {
-  width: 100%;
-  max-width: 260px;
+/* make sizing include padding so 100% actually fits */
+.sidebar,
+.sidebar * {
+  box-sizing: border-box;
 }
 
+/* hard-stop any overflow from the avatar block */
+.author__avatar {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* never exceed the sidebar's inner width (account for padding via border-box above) */
 .author__avatar img {
-  width: 100%;
+  display: block;
+  max-width: 100%;
+  width: 260px;      /* desired size when there's room */
   height: auto;
   border-radius: 50%;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
