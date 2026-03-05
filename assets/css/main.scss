@@ -57,9 +57,8 @@
 /* never exceed the sidebar's inner width (account for padding via border-box above) */
 .author__avatar img {
   display: block;
-  max-width: 100%;
-  width: 260px;      /* desired size when there's room */
+  width: 100%;
+  max-width: 260px;
   height: auto;
   border-radius: 50%;
-  image-rendering: auto;
 }
