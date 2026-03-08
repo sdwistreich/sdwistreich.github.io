@@ -42,22 +42,9 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-@media (min-width: 64em) {
-  .sidebar {
-    width: 320px;
-    padding-right: 2rem;
-  }
-
-  .author__avatar img {
-    width: 260px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-  }
-
-  .page {
-    float: right;
-    width: calc(100% - 320px);
-    padding-left: 2rem;
-  }
+.author__avatar img {
+  width: min(260px, 100%);
+  height: auto;
+  border-radius: 50%;
+  image-rendering: auto;
 }
