@@ -43,8 +43,8 @@
 ;
 
 .author__avatar img {
-  width: min(260px, 100%);
+  width: clamp(180px, 22vw, 260px);
+  max-width: 100%;
   height: auto;
   border-radius: 50%;
-  image-rendering: auto;
 }
