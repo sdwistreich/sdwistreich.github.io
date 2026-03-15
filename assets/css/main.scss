@@ -46,12 +46,15 @@
   width: 300px;
   max-width: 100%;
   height: auto;
-}
-
-.author__avatar img {
   border-radius: 5% !important;
 }
 
 .author__avatar {
   border-radius: 5% !important;
+}
+
+@media (max-width: 1480px) {
+  .author__avatar img {
+    width: 150px;
+  }
 }
