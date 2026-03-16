@@ -15,6 +15,8 @@ redirect_from:
 </p>
 
 ## News
+- **[April 2026]** Invited to talk about DexSkin at the <a href="https://leonardo.info/laser-talks">Leonardo Art Science Evening Rendezvous (LASER)</a> lecture series. 
+<!-- *(<a href="https://leonardo.info/laser-talks"><span style="color:red;">Details</span></a>)* -->
 - **[February 2026]** Accepted to CS PhD program at Stanford University.
 - **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026, Stanford School of Engineering.
 - **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
