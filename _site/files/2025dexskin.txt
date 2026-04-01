@@ -1,0 +1,10 @@
+@inproceedings{wistreich2025dexskinhighcoverageconformablerobotic,
+      title={DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation}, 
+      author={Suzannah Wistreich and Baiyu Shi and Stephen Tian and Samuel Clarke and Michael Nath and Chengyi Xu and Zhenan Bao and Jiajun Wu},
+      year={2025},
+      eprint={2509.18830},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      booktitle={Conference on Robot Learning (CoRL)},
+      url={https://arxiv.org/abs/2509.18830}, 
+}

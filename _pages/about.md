@@ -13,17 +13,24 @@ redirect_from:
 <p class="bio-large">
   I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
+<p class="bio-large">
+  ⚙️ This summer, I will be interning at <a href="https://bostondynamics.com/products/atlas/">Boston Dynamics</a>, working on the Atlas AI team!
+</p>
 
 ## News
-- **[April 2026]** Invited to talk about DexSkin at the <a href="https://leonardo.info/laser-talks">Leonardo Art Science Evening Rendezvous (LASER)</a> lecture series. 
-*(<a href="https://events.stanford.edu/event/three-laser-talks-robotic-skin-motion-sculpture-poetry"><span>Details</span></a>)*
-- **[February 2026]** Accepted to CS PhD program at Stanford University.
-- **[September 2025]** Selected as a [Siebel Scholar](https://www.siebelscholars.com), Class of 2026, Stanford School of Engineering.
-- **[August 2025]** *[DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://dex-skin.github.io)*, is accepted to CoRL 2025!
-- **[June 2025]** *[X-Capture: An Open-Source Portable Device for Multi-Sensory Learning](https://xcapture.github.io)*, is accepted to ICCV 2025!
-- **[June 2025]** Completed BSCS degree at Stanford University.
+<div class="news">
+  <ul>
+    <li><span class="date">[April 2026]</span> Invited to talk about DexSkin at the <a href="https://leonardo.info/laser-talks">Leonardo Art Science Evening Rendezvous (LASER)</a> lecture series. (<a href="https://events.stanford.edu/event/three-laser-talks-robotic-skin-motion-sculpture-poetry"><i>Details</i></a>)</li>
+    <li><span class="date">[February 2026]</span> Accepted to CS PhD program at Stanford University.</li>
+    <li><span class="date">[September 2025]</span> Selected as a <a href="https://www.siebelscholars.com">Siebel Scholar</a>, Class of 2026, Stanford School of Engineering.</li>
+    <li><span class="date">[August 2025]</span> <a href="https://dex-skin.github.io"><em>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</em></a>, is accepted to CoRL 2025!</li>
+    <li><span class="date">[June 2025]</span> <a href="https://xcapture.github.io"><em>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</em></a>, is accepted to ICCV 2025!</li>
+    <li><span class="date">[June 2025]</span> Completed BSCS degree at Stanford University.</li>
+  </ul>
+</div>
 
 ## Publications
+<div class="publications">
 <style>
 .card {
   display: block;
@@ -119,4 +126,5 @@ redirect_from:
       <a href="/files/2025xcapture.txt">bibtex</a>
     </div>
   </div>
+</div>
 </div>
