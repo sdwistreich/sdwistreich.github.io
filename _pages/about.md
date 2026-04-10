@@ -14,7 +14,7 @@ redirect_from:
   I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
 <p class="bio-large">
-  ⚙️ This summer, I will be interning at <a href="https://bostondynamics.com/products/atlas/">Boston Dynamics</a>, working on the Atlas AI team!
+  ⚙️ This summer, I will be interning at <a href="https://bostondynamics.com/products/atlas/">Boston Dynamics</a>, working on the Atlas AI Research team!
 </p>
 
 ## News
