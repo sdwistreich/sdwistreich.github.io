@@ -20,6 +20,7 @@ redirect_from:
 ## News
 <div class="news">
   <ul>
+    <li><span class="date">[June 2026]</span> Started internship at <a href="https://bostondynamics.com">Boston Dynamics</a>.</li>
     <li><span class="date">[April 2026]</span> Invited to talk about DexSkin at the <a href="https://leonardo.info/laser-talks">Leonardo Art Science Evening Rendezvous (LASER)</a> lecture series. (<a href="https://events.stanford.edu/event/three-laser-talks-robotic-skin-motion-sculpture-poetry"><i>Details</i></a>)</li>
     <li><span class="date">[February 2026]</span> Accepted to CS PhD program at Stanford University.</li>
     <li><span class="date">[September 2025]</span> Selected as a <a href="https://www.siebelscholars.com">Siebel Scholar</a>, Class of 2026, Stanford School of Engineering.</li>
@@ -82,6 +83,7 @@ redirect_from:
   margin: 0 0.35rem;
 }
 </style>
+
 
 <div class="card">
   <div class="thumb">
