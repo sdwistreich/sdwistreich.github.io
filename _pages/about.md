@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <p class="bio-large">
-  I am a coterm Master's student and incoming PhD in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
+  I am an incoming PhD in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
 </p>
 <p class="bio-large">
   I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
