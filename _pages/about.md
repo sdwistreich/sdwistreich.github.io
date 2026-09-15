@@ -8,18 +8,21 @@ redirect_from:
 ---
 
 <p class="bio-large">
-  I am an incoming PhD in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
-</p>
+  I am a PhD student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
+  
+  
+  </p>
 <p class="bio-large">
   I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
 <p class="bio-large">
-  ⚙️ This summer, I will be interning at <a href="https://bostondynamics.com/products/atlas/">Boston Dynamics</a>, working on the Atlas AI Research team!
+  I have also spent time at <a href="https://bostondynamics.com/">Boston Dynamics</a>, working on tactile sensing with the <a href="https://bostondynamics.com/products/atlas/">Atlas</a> Behavior Research team, where I previously spent a wonderful summer.   ⚙️
 </p>
 
 ## News
 <div class="news">
   <ul>
+    <li><span class="date">[September 2026]</span> Start CS PhD at Stanford, working in the <a href="https://svl.stanford.edu">Stanford Vision and Learning Lab (SVL)</a>.</li>
     <li><span class="date">[July 2026]</span> Invited talk on <a href="https://x.com/RoboPapers/status/2072304222436278598">RoboPapers Podcast</a>.</li>
     <li><span class="date">[June 2026]</span> Started internship at <a href="https://bostondynamics.com">Boston Dynamics</a>.</li>
     <li><span class="date">[April 2026]</span> Invited to talk about DexSkin at the <a href="https://leonardo.info/laser-talks">Leonardo Art Science Evening Rendezvous (LASER)</a> lecture series. (<a href="https://events.stanford.edu/event/three-laser-talks-robotic-skin-motion-sculpture-poetry"><i>Details</i></a>)</li>
@@ -27,7 +30,7 @@ redirect_from:
     <li><span class="date">[September 2025]</span> Selected as a <a href="https://www.siebelscholars.com">Siebel Scholar</a>, Class of 2026, Stanford School of Engineering.</li>
     <li><span class="date">[August 2025]</span> <a href="https://dex-skin.github.io"><em>DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation</em></a>, is accepted to CoRL 2025!</li>
     <li><span class="date">[June 2025]</span> <a href="https://xcapture.github.io"><em>X-Capture: An Open-Source Portable Device for Multi-Sensory Learning</em></a>, is accepted to ICCV 2025!</li>
-    <li><span class="date">[June 2025]</span> Completed BSCS degree at Stanford University.</li>
+    <!-- <li><span class="date">[June 2025]</span> Completed BSCS degree at Stanford University.</li> -->
   </ul>
 </div>
 
