@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Real-world Rollouts &mdash; Laundry Sort</title>
+<link href="https://fonts.googleapis.com/css?family=Google+Sans" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #4a4a4a;
+    --muted: #53565A;
+    --accent: #8C1515;
+    --grid: #d8d8d8;
+    --axis: rgba(46,45,41,0.45);
+    --circle-fill: rgba(46,45,41,0.05);
+    --circle-stroke: #2E2D29;
+    --dot: #53565A;
+    --dot-edge: #2E2D29;
+    --dot-hover: #8C1515;
+    --dot-active: #8C1515;
+    --dot-active-edge: #5a0e0e;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Google Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .top-figure {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .top-figure img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  @media (max-width: 600px) {
+    .hint { font-size: 0.8rem; }
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .plot-col {
+    min-width: 0;
+  }
+
+  svg.plot { width: 100%; height: auto; display: block; }
+  svg.plot .dot { cursor: pointer; transition: transform 0.08s ease; transform-box: fill-box; transform-origin: center; }
+  svg.plot .dot:hover { transform: scale(1.25); fill: var(--dot-hover); }
+  svg.plot .dot.active { fill: var(--dot-active); stroke: var(--dot-active-edge); transform: scale(1.35); }
+
+  .info {
+    margin-top: 8px;
+    font-family: "Google Sans", sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .info { font-size: 0.8rem; }
+  }
+
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .vpanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+  }
+  .vpanel video {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    aspect-ratio: 160 / 96;
+  }
+  .vpanel .empty {
+    width: 100%;
+    aspect-ratio: 160 / 96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    background: #f4f4f4;
+    border-radius: 6px;
+    font-style: italic;
+  }
+  .vpanel .label {
+    margin-top: 6px;
+    font-family: "Google Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--fg);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .vpanel[data-policy="ours"] .label {
+    color: #c0392b;
+  }
+  .vpanel .outcome {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: auto;
+    min-height: 22px;
+    font-family: "Google Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--fg);
+  }
+  .vpanel .outcome svg { display: block; }
+  .vpanel .outcome .joint-mark { color: var(--accent); cursor: help; }
+
+  @media (max-width: 600px) {
+    .vpanel .empty { font-size: 0.8rem; }
+    .vpanel .label { font-size: 0.8rem; }
+    .vpanel .outcome { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="layout">
+    <div class="plot-col">
+      <svg class="plot" id="plot" viewBox="0 0 400 400"></svg>
+      <div class="info" id="info">No rollout selected.</div>
+    </div>
+
+    <div class="videos" id="videos">
+      <div class="vpanel" data-policy="2d">
+        <div class="empty">click a dot</div>
+        <div class="label">2D</div>
+        <div class="outcome"></div>
+      </div>
+      <div class="vpanel" data-policy="dp3">
+        <div class="empty">click a dot</div>
+        <div class="label">DP3</div>
+        <div class="outcome"></div>
+      </div>
+      <div class="vpanel" data-policy="pi05">
+        <div class="empty">click a dot</div>
+        <div class="label">Fine-tuned &pi;<sub>0.5</sub></div>
+        <div class="outcome"></div>
+      </div>
+      <div class="vpanel" data-policy="ours">
+        <div class="empty">click a dot</div>
+        <div class="label">MobileVISTA (Ours)</div>
+        <div class="outcome"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const VIDEOS_BASE = "assets/laundry_random_videos/";
+
+// Each trial:
+//   x, y           : object offset in cm (x: +right/-left, y: +forward/-backward)
+//   vids           : { policy: timestamp string }
+//   outcomes       : { policy: "0/4" | "1/4" | "2/4" | "3/4" | "4/4" }
+//   joints         : { policy: boolean }  // joint-limit violation flag
+const TRIALS = [
+  { x: +4.66, y: +5.49, vids: { "2d": "2026-06-03-14-14-01", dp3: "2026-06-03-14-22-02", pi05: "2026-06-03-14-09-39", ours: "2026-06-03-13-59-11" }, outcomes: { "2d": "2/4", dp3: "4/4", pi05: "1/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +14.61, y: +0.97, vids: { "2d": "2026-06-03-14-47-15", dp3: "2026-06-03-14-31-57", pi05: "2026-06-03-14-34-07", ours: "2026-06-03-14-38-30" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -9.64, y: +3.56, vids: { "2d": "2026-06-03-15-09-44", dp3: "2026-06-03-15-14-43", pi05: "2026-06-03-15-17-33", ours: "2026-06-03-14-57-47" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +0.42, y: +0.22, vids: { "2d": "2026-06-03-15-23-02", dp3: "2026-06-03-15-30-27", pi05: "2026-06-03-15-48-19", ours: "2026-06-03-15-38-59" }, outcomes: { "2d": "4/4", dp3: "0/4", pi05: "1/4", ours: "3/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -14.37, y: -1.65, vids: { "2d": "2026-06-03-15-51-12", dp3: "2026-06-03-16-27-03", pi05: "2026-06-03-16-29-13", ours: "2026-06-03-15-57-44" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +0.13, y: +8.70, vids: { "2d": "2026-06-03-16-56-25", dp3: "2026-06-03-16-36-23", pi05: "2026-06-03-16-52-59", ours: "2026-06-03-16-45-54" }, outcomes: { "2d": "0/4", dp3: "1/4", pi05: "0/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -10.53, y: -9.53, vids: { "2d": "2026-06-03-17-02-45", dp3: "2026-06-03-17-11-10", pi05: "2026-06-03-17-06-47", ours: "2026-06-03-17-19-05" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -0.54, y: +7.13, vids: { "2d": "2026-06-03-17-25-56", dp3: "2026-06-03-17-29-02", pi05: "2026-06-03-17-31-41", ours: "2026-06-03-17-37-54" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "3/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: true } },
+  { x: +12.32, y: -2.71, vids: { "2d": "2026-06-03-18-00-47", dp3: "2026-06-03-17-57-22", pi05: "2026-06-03-17-54-57", ours: "2026-06-03-17-49-14" }, outcomes: { "2d": "1/4", dp3: "0/4", pi05: "0/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -0.07, y: -14.56, vids: { "2d": "2026-06-03-18-15-25", dp3: "2026-06-03-18-24-37", pi05: "2026-06-03-18-19-22", ours: "2026-06-03-18-10-47" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -7.56, y: +8.77, vids: { "2d": "2026-06-03-18-50-17", dp3: "2026-06-03-18-28-34", pi05: "2026-06-03-18-45-34", ours: "2026-06-03-18-40-18" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: true } },
+  { x: +7.26, y: +2.51, vids: { "2d": "2026-06-03-19-08-38", dp3: "2026-06-03-19-21-41", pi05: "2026-06-03-19-02-22", ours: "2026-06-03-19-13-32" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "4/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: true } },
+  { x: -1.30, y: -4.39, vids: { "2d": "2026-06-03-19-33-34", dp3: "2026-06-03-19-41-44", pi05: "2026-06-03-19-26-38", ours: "2026-06-03-19-55-18" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -10.73, y: +5.97, vids: { "2d": "2026-06-03-20-22-39", dp3: "2026-06-03-20-29-49", pi05: "2026-06-03-20-25-18", ours: "2026-06-03-20-14-19" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "2/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: true } },
+  { x: +5.68, y: -2.30, vids: { "2d": "2026-06-03-21-29-28", dp3: "2026-06-03-21-35-31", pi05: "2026-06-03-21-39-59", ours: "2026-06-03-21-46-04" }, outcomes: { "2d": "0/4", dp3: "4/4", pi05: "2/4", ours: "4/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +2.16, y: -10.10, vids: { "2d": "2026-06-03-21-55-50", dp3: "2026-06-03-22-02-20", pi05: "2026-06-03-21-57-33", ours: "2026-06-03-21-53-01" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -10.19, y: -2.40, vids: { "2d": "2026-06-03-22-16-07", dp3: "2026-06-03-22-12-24", pi05: "2026-06-03-22-20-15", ours: "2026-06-03-22-06-58" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +2.12, y: -2.60, vids: { "2d": "2026-06-03-22-41-58", dp3: "2026-06-03-22-23-32", pi05: "2026-06-03-22-49-15", ours: "2026-06-03-22-36-05" }, outcomes: { "2d": "1/4", dp3: "0/4", pi05: "1/4", ours: "3/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -3.40, y: -11.63, vids: { "2d": "2026-06-03-23-17-01", dp3: "2026-06-03-23-05-42", pi05: "2026-06-03-23-02-29", ours: "2026-06-03-23-08-59" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +14.34, y: -1.40, vids: { "2d": "2026-06-03-23-23-09", dp3: "2026-06-03-23-28-47", pi05: "2026-06-03-23-35-19", ours: "2026-06-03-23-38-55" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -13.06, y: +0.87, vids: { "2d": "2026-06-03-23-47-08", dp3: "2026-06-03-23-51-49", pi05: "2026-06-03-23-56-07", ours: "2026-06-03-23-42-34" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "1/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +8.44, y: -12.29, vids: { "2d": "2026-06-04-00-14-08", dp3: "2026-06-04-00-02-31", pi05: "2026-06-04-00-05-48", ours: "2026-06-04-00-10-48" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +6.09, y: +8.54, vids: { "2d": "2026-06-04-00-19-35", dp3: "2026-06-04-00-31-53", pi05: "2026-06-04-00-35-15", ours: "2026-06-04-00-38-41" }, outcomes: { "2d": "3/4", dp3: "0/4", pi05: "0/4", ours: "1/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: +4.50, y: -8.95, vids: { "2d": "2026-06-04-00-47-46", dp3: "2026-06-04-00-50-09", pi05: "2026-06-04-00-55-12", ours: "2026-06-04-00-51-54" }, outcomes: { "2d": "0/4", dp3: "0/4", pi05: "0/4", ours: "0/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+  { x: -3.04, y: +0.18, vids: { "2d": "2026-06-04-01-17-17", dp3: "2026-06-04-01-14-15", pi05: "2026-06-04-01-21-43", ours: "2026-06-04-00-57-34" }, outcomes: { "2d": "1/4", dp3: "0/4", pi05: "1/4", ours: "3/4" }, joints: { "2d": false, dp3: false, pi05: false, ours: false } },
+];
+
+const POLICY_ORDER = ["2d", "dp3", "pi05", "ours"];
+
+// 5-bin palette matching the score plot (red -> dark green)
+const OUTCOME_COLORS = {
+  "0/4": ["#e74c3c", "#922b21"],
+  "1/4": ["#f1c40f", "#a07d08"],
+  "2/4": ["#a3d960", "#5e8a1f"],
+  "3/4": ["#2ecc71", "#1a8a4a"],
+  "4/4": ["#196f3d", "#0e3d22"],
+};
+
+function outcomeHTML(outcome, jointViolated) {
+  const [fill, stroke] = OUTCOME_COLORS[outcome] || ["#888", "#444"];
+  const tip = jointViolated
+    ? `${outcome} sorted (joint limits exceeded)`
+    : `${outcome} sorted`;
+  const star = jointViolated
+    ? '<span class="joint-mark" title="joint limits exceeded">*</span>'
+    : '';
+  return `<svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="10" r="8" fill="${fill}" stroke="${stroke}" stroke-width="0.8"><title>${tip}</title></circle></svg><span>${outcome}</span>`;
+}
+
+function signed(n) {
+  const v = Number(n).toFixed(2);
+  return v.startsWith("-") ? v : "+" + v;
+}
+
+function videoFilename(trial, policy) {
+  const xs = signed(trial.x);
+  const ys = signed(trial.y);
+  const ts = trial.vids[policy];
+  return `${VIDEOS_BASE}x${xs}_y${ys}_${policy}_${ts}.mp4`;
+}
+
+// --- plot -----------------------------------------------------------------
+const L = 16, R = 15;
+const VB = 400;
+const MARGIN = 36;
+const PLOT = VB - 2 * MARGIN;
+const NS = "http://www.w3.org/2000/svg";
+const sx = (x) => MARGIN + ((x + L) / (2 * L)) * PLOT;
+const sy = (y) => MARGIN + ((L - y) / (2 * L)) * PLOT;
+
+const svg = document.getElementById("plot");
+
+const c = document.createElementNS(NS, "circle");
+c.setAttribute("cx", sx(0)); c.setAttribute("cy", sy(0));
+c.setAttribute("r", (R / (2 * L)) * PLOT);
+c.setAttribute("fill", "var(--circle-fill)");
+c.setAttribute("stroke", "var(--circle-stroke)");
+c.setAttribute("stroke-width", "1.2");
+c.setAttribute("stroke-dasharray", "4 3");
+svg.appendChild(c);
+
+const ticks = [-15, -10, -5, 5, 10, 15];
+for (const t of ticks) {
+  const vx = document.createElementNS(NS, "line");
+  vx.setAttribute("x1", sx(t)); vx.setAttribute("x2", sx(t));
+  vx.setAttribute("y1", sy(-L)); vx.setAttribute("y2", sy(L));
+  vx.setAttribute("stroke", "var(--grid)"); vx.setAttribute("stroke-width", "0.5");
+  vx.setAttribute("opacity", "0.5");
+  svg.appendChild(vx);
+  const vy = document.createElementNS(NS, "line");
+  vy.setAttribute("y1", sy(t)); vy.setAttribute("y2", sy(t));
+  vy.setAttribute("x1", sx(-L)); vy.setAttribute("x2", sx(L));
+  vy.setAttribute("stroke", "var(--grid)"); vy.setAttribute("stroke-width", "0.5");
+  vy.setAttribute("opacity", "0.5");
+  svg.appendChild(vy);
+}
+
+const ax1 = document.createElementNS(NS, "line");
+ax1.setAttribute("x1", sx(-L)); ax1.setAttribute("x2", sx(L));
+ax1.setAttribute("y1", sy(0));  ax1.setAttribute("y2", sy(0));
+ax1.setAttribute("stroke", "var(--axis)"); ax1.setAttribute("stroke-width", "1.5");
+svg.appendChild(ax1);
+const ax2 = document.createElementNS(NS, "line");
+ax2.setAttribute("x1", sx(0));  ax2.setAttribute("x2", sx(0));
+ax2.setAttribute("y1", sy(-L)); ax2.setAttribute("y2", sy(L));
+ax2.setAttribute("stroke", "var(--axis)"); ax2.setAttribute("stroke-width", "1.5");
+svg.appendChild(ax2);
+
+for (const t of ticks) {
+  const tx = document.createElementNS(NS, "text");
+  tx.setAttribute("x", sx(t)); tx.setAttribute("y", sy(0) + 14);
+  tx.setAttribute("text-anchor", "middle"); tx.setAttribute("font-size", "10");
+  tx.setAttribute("font-family", "Google Sans, sans-serif");
+  tx.setAttribute("font-weight", "600"); tx.setAttribute("fill", "var(--muted)");
+  tx.textContent = t; svg.appendChild(tx);
+  const ty = document.createElementNS(NS, "text");
+  ty.setAttribute("x", sx(0) - 6); ty.setAttribute("y", sy(t) + 3);
+  ty.setAttribute("text-anchor", "end"); ty.setAttribute("font-size", "10");
+  ty.setAttribute("font-family", "Google Sans, sans-serif");
+  ty.setAttribute("font-weight", "600"); ty.setAttribute("fill", "var(--muted)");
+  ty.textContent = t; svg.appendChild(ty);
+}
+
+const dots = [];
+const DOT_R = 7.5;
+TRIALS.forEach((trial, i) => {
+  const dot = document.createElementNS(NS, "circle");
+  dot.setAttribute("class", "dot");
+  dot.setAttribute("cx", sx(trial.x));
+  dot.setAttribute("cy", sy(trial.y));
+  dot.setAttribute("r", DOT_R);
+  dot.setAttribute("fill", "var(--dot)");
+  dot.setAttribute("stroke", "var(--dot-edge)");
+  dot.setAttribute("stroke-width", "0.8");
+  dot.setAttribute("data-trial", i);
+  dot.addEventListener("click", () => selectTrial(i));
+  const title = document.createElementNS(NS, "title");
+  title.textContent = `Trial ${i} \u2014 (${trial.x.toFixed(2)}, ${trial.y.toFixed(2)})`;
+  dot.appendChild(title);
+  svg.appendChild(dot);
+  dots.push(dot);
+});
+
+const info = document.getElementById("info");
+const videosEl = document.getElementById("videos");
+
+function selectTrial(i) {
+  const trial = TRIALS[i];
+  dots.forEach((d, j) => d.classList.toggle("active", j === i));
+  const xDir = trial.x >= 0 ? "Right" : "Left";
+  const yDir = trial.y >= 0 ? "Forward" : "Back";
+  info.innerHTML = `Trial ${i}<br>${xDir} ${Math.abs(trial.x).toFixed(2)} cm, ${yDir} ${Math.abs(trial.y).toFixed(2)} cm`;
+
+  for (const policy of POLICY_ORDER) {
+    const panel = videosEl.querySelector(`.vpanel[data-policy="${policy}"]`);
+
+    let v = panel.querySelector("video");
+    if (!v) {
+      v = document.createElement("video");
+      v.controls = true;
+      v.muted = true;
+      v.playsInline = true;
+      v.style.width = "100%";
+      v.style.display = "block";
+      v.style.borderRadius = "6px";
+      const empty = panel.querySelector(".empty");
+      if (empty) empty.style.display = "none";
+      panel.insertBefore(v, panel.firstChild);
+    }
+
+    v.src = videoFilename(trial, policy);
+    v.load();
+
+    panel.querySelector(".outcome").innerHTML = outcomeHTML(trial.outcomes[policy], trial.joints[policy]);
+  }
+}
+
+// Default to a representative trial (Right 7.26cm, Forward 2.51cm) so the panel isn't empty on load.
+const DEFAULT_TRIAL = TRIALS.findIndex(t => t.x === 7.26 && t.y === 2.51);
+if (DEFAULT_TRIAL !== -1) selectTrial(DEFAULT_TRIAL);
+
+// Report own size to parent
+(function () {
+  const send = () => {
+    const h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    parent.postMessage({ type: 'iframe-resize', height: h }, '*');
+  };
+  window.addEventListener('load', send);
+  window.addEventListener('resize', send);
+  if (window.ResizeObserver) {
+    new ResizeObserver(send).observe(document.body);
+  }
+})();
+</script>
+
+</body>
+</html>
