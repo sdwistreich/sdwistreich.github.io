@@ -1,0 +1,7 @@
+@misc{wistreich2026mobilevista,
+    title={MobileVISTA: Generative Data Augmentation for Pose Generalization in Mobile Manipulation},
+    author={Suzannah Wistreich and Stephen Tian and Isabella Huang and Vitor Campagnolo Guizilini and Sergey Zakharov and Katherine Liu and Jiajun Wu},
+    year={2026},
+    note={Preprint},
+    url={https://sdwistreich.github.io/mobilevista/},
+}
