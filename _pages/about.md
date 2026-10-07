@@ -7,13 +7,19 @@ redirect_from:
   - /about.html
 ---
 
+<style>
+.dept-note {
+  font-size: 0.85em;
+}
+</style> 
+
 <p class="bio-large">
-  I am a PhD student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>.
+  I am a PhD student in Computer Science at <a href="https://www.cs.stanford.edu">Stanford University</a> where I research multisensory learning, robotics, and computer vision advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a>. 
+
   
-  
-  </p>
-<p class="bio-large">
-  I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor <a href="https://jiajunwu.com/">Jiajun Wu</a> and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
+  <!-- </p>
+<p class="bio-large"> -->
+  I graduated from Stanford University with a Bachelor's in Computer Science (2025). In my undergraduate, I was very fortunate to be advised by Professor Jiajun Wu and Professor <a href="https://psychology.stanford.edu/people/hyowon-gweon">Hyo Gweon</a>, working on robotics and human cognition.
 </p>
 <p class="bio-large">
   I have also spent time at <a href="https://bostondynamics.com/">Boston Dynamics</a>, working on tactile sensing with the <a href="https://bostondynamics.com/products/atlas/">Atlas</a> Behavior Research team, where I previously spent a wonderful summer.   ⚙️
@@ -34,7 +40,7 @@ redirect_from:
   </ul>
 </div>
 
-## Publications
+<h2 id="publications">Publications <span class="pub-toggle-links"><a href="#" class="pub-toggle-link" data-mode="all">all</a><span class="pub-toggle-sep">/</span><a href="#" class="pub-toggle-link" data-mode="pinned">selected</a></span></h2>
 <div class="publications">
 <style>
 .card {
@@ -86,10 +92,65 @@ redirect_from:
 .card .links .sep {
   margin: 0 0.35rem;
 }
+.pub-toggle-links {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-left: 0.75rem;
+  white-space: nowrap;
+}
+.pub-toggle-link {
+  color: var(--global-link-color) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pub-toggle-link:hover {
+  text-decoration: underline;
+}
+.pub-toggle-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.pub-toggle-sep {
+  margin: 0 0.3rem;
+  color: var(--global-text-color-light, #999);
+}
+.card {
+  position: relative;
+}
+.card[data-pinned="true"] {
+  background: rgba(70, 130, 230, 0.09);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+[data-theme="dark"] .card[data-pinned="true"] {
+  background: rgba(100, 160, 255, 0.14);
+}
 </style>
 
+<div class="card" data-pinned="false">
+  <div class="thumb">
+    <img src="/images/MobileVISTA.gif" alt="MobileVISTA GIF" draggable="false" loading="eager" width="240" height="135">
+  </div>
+  <div class="info">
+    <h3 class="title">
+      <a href="https://arxiv.org/abs/2610.07511"><strong>MobileVISTA: Generative Data Augmentation
+for Pose Generalization in Mobile Manipulation</strong></a>
+    </h3>
+    <p class="authors">
+      <strong>Suzannah Wistreich</strong>, Stephen Tian, Isabella Huang, Vitor Guizilini, Sergey Zakharov, Katherine Liu, Jiajun Wu
+    </p>
+            <p class="venue">
+    <i>Preprint</i>, 2026<br>
+    </p>
+    <div class="links">
+      <a href="/mobilevista/">project page</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="https://arxiv.org/abs/2610.07511">arXiv</a><span class="sep">&nbsp;/&nbsp;</span>
+      <a href="/files/2026mobilevista.txt">bibtex</a>
+    </div>
+  </div>
+</div>
 
-<div class="card">
+<div class="card" data-pinned="true">
   <div class="thumb">
     <img src="/images/DexSkin.gif" alt="DexSkin GIF" draggable="false" loading="eager" width="240" height="135">
   </div>
@@ -112,7 +173,7 @@ redirect_from:
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-pinned="false">
   <div class="thumb">
     <img src="/images/CroppedTurntable.gif" alt="X-Capture GIF" draggable="false" loading="eager" width="240">
   </div>
@@ -134,3 +195,57 @@ redirect_from:
   </div>
 </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var container = document.querySelector('.publications');
+  var toggleLinks = document.querySelectorAll('.pub-toggle-link');
+  if (!container || !toggleLinks.length) return;
+  var cards = Array.prototype.slice.call(container.querySelectorAll('.card'));
+
+  function render(mode, animate) {
+    var startRects = animate ? cards.map(function (card) { return card.getBoundingClientRect(); }) : null;
+
+    var ordered = cards.slice().sort(function (a, b) {
+      if (mode !== 'pinned') return 0;
+      var aPinned = a.dataset.pinned === 'true';
+      var bPinned = b.dataset.pinned === 'true';
+      if (aPinned === bPinned) return 0;
+      return aPinned ? -1 : 1;
+    });
+    ordered.forEach(function (card) { container.appendChild(card); });
+    toggleLinks.forEach(function (link) {
+      link.classList.toggle('active', link.dataset.mode === mode);
+    });
+
+    if (animate) {
+      cards.forEach(function (card, i) {
+        var before = startRects[i];
+        var after = card.getBoundingClientRect();
+        var dx = before.left - after.left;
+        var dy = before.top - after.top;
+        if (!dx && !dy) return;
+        card.style.transition = 'none';
+        card.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+        requestAnimationFrame(function () {
+          card.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = '';
+        });
+        card.addEventListener('transitionend', function handler() {
+          card.style.transition = '';
+          card.removeEventListener('transitionend', handler);
+        });
+      });
+    }
+  }
+
+  toggleLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      render(link.dataset.mode, true);
+    });
+  });
+
+  render('pinned', false);
+});
+</script>
