@@ -129,7 +129,7 @@ redirect_from:
 
 <div class="card" data-pinned="false">
   <div class="thumb">
-    <img src="/images/MobileVISTA.gif" alt="MobileVISTA GIF" draggable="false" loading="eager" width="240" height="135">
+    <img src="/images/mobileVISTA.gif" alt="MobileVISTA GIF" draggable="false" loading="eager" width="240" height="135">
   </div>
   <div class="info">
     <h3 class="title">
@@ -246,6 +246,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  render('pinned', false);
+  render('all', false);
 });
 </script>
