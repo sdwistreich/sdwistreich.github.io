@@ -140,7 +140,7 @@ for Pose Generalization in Mobile Manipulation</strong></a>
       <strong>Suzannah Wistreich</strong>, Stephen Tian, Isabella Huang, Vitor Guizilini, Sergey Zakharov, Katherine Liu, Jiajun Wu
     </p>
             <p class="venue">
-     <i><a href="https://sisren-embodied-nav.github.io">SISREN</a> Workshop @ CoRL 2026</i><br>
+     <i>CoRL Workshop on Spatial Intelligence and Structured Reasoning for Embodied Navigation (<a href="https://sisren-embodied-nav.github.io">SISREN</a>)</i>, 2026<br>
      <i>arXiv Preprint</i><br>
     </p>
     <div class="links">
