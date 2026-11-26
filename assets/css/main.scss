@@ -68,6 +68,27 @@
   line-height: 1.52 !important;
 }
 
+.sidebar .author__bio,
+.sidebar .author__urls li {
+  font-size: 0.7875em;
+}
+
+.card .authors {
+  font-size: 0.91em;
+}
+
+#main,
+.masthead__inner-wrap {
+  max-width: min(100%, calc(971.25px - 5vw));
+}
+
+@media (min-width: 1480px) {
+  #main,
+  .masthead__inner-wrap {
+    max-width: calc(1554px - 5vw);
+  }
+}
+
 .news {
   font-size: 0.97rem !important;
 }
